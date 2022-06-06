@@ -87,3 +87,7 @@ h3 {
   border-radius: 15px;
   background-color: #3387c380;
 }
+
+textarea {
+  width: 400px;
+}
