@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
     <title>Surprise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -25,15 +26,40 @@
     </div>
 
     <div class="text-center">
-      <img class="gambar" src="Ucapan.jpg" class="rounded mx-auto d-block gambar" alt="..." />
+      <img class="gambar animate__animated animate__swing" src="Ucapan.jpg" class="rounded mx-auto d-block gambar" alt="..." />
     </div>
     <br />
     <br />
 
-    <div class="container">
-      <h2>Coming Soon</h2>
-      <h3 id="demo"></h3>
-      <p>11 Juni 2022, 19.30 WIB</p>
+    <div class="container" onmousedown="konten(this)">
+      <h2>Surat Cinta Untuk Dinda</h2>
+      <p>Dear Dinda Mutiara Hati,</p>
+      <p class="paragraf">
+        Gak kerasa ya kita udah kenalan selama 2 bulan sudah beragam kisah dan cerita yang kita lalui bersama, dan yang paling berkesan selama ini saat kita jalan kemarin. Aku sangat senang bisa jalan berdua sama kamu dan menonton film di
+        bioskop bersama yang dapat mengurangi rasa kesepian yang aku rasain selama ini.
+      </p>
+      <p class="paragraf">
+        Din, Aku ingin menyampaikan perasaanku kepadamu karena saat ini aku sudah tidak bisa menahan perasaan yang bergejolak di dalam hati ini. Aku sangat senang sekali bisa mengenalmu, seperti yang aku bilang sebelumnya kamu memberikan
+        dampak positif di hidupku, aku menjadi lumayan lebih rajin belajar dibanding sebelumnya karena janji janji yang telah kita buat itu hehe dan juga menjadikan hidupku kearah yang lebih baik.
+      </p>
+      <p class="paragraf">
+        Din, kamu itu bagaikan hujan di saat musim kemarau yang memberikan kesejukan disaat teriknya panas matahari. Kamu selalu membuat aku ceria dan selalu ingin mendengar ceritamu setiap hari. Setiap hari aku selalu memilkirkanmu, aku
+        rasa tiada hari tanpa memikirkanmu sampai tidurpun aku memimpikanmu. Ucapanku tadi serius ini ya gak hanya ungkapan saja dan juga gak melebih-lebihkan tetapi real berdasarkan fakta apa yang aku rasain selama ini.
+      </p>
+      <p class="paragraf">
+        Din, mungkin aku bukan tipe orang yang sangat romantis, Aku tidak pandai merangkai sebuah kata dan juga tidak pandai dalam menulis puisi tetapi aku berusaha memberikan kecerian dihidupmu dengan caraku. Setelah apa yang telah kita
+        lalui beberapa bulan ini, aku ngerasa mulai sayang dan suka padamu, apa kamu merasakan hal yang sama juga din ? Aku ingin tahu apa sih yang kamu rasain selama ini saat kita bersama apakah kamu juga suka dan sayang kepadaku melebihi
+        seorang teman seperti yang aku rasain selama ini din ? aku tunggu jawabanmu ya din. Kamu bisa menulisnya di kolom isian dibawah ini.
+      </p>
+      <p class="paragraf">Mungkin menurut kamu ini kurang romantis, kalok boleh nanti waktu kita ketemu dan jalan bareng lagi aku akan mencurahkan apa yang aku rasain secara langsung dihadapanmu.</p>
+      <br />
+      <p>Your Admirer</p>
+      <p>Putu Ary Kusuma Yudha</p>
+      <br />
+      <audio controls>
+        <source src="musik.mp3" type="audio/mpeg" />
+        pindah browser din, gak support
+      </audio>
     </div>
 
     <br />
@@ -43,39 +69,10 @@
       <form action="https://server-putuarykusumayudha.000webhostapp.com/komentar" method="post">
         <input type="text" name="nama" value="Dinda" style="display: none" />
         <div class="mb-3">
-          <textarea type="text" name="komentar" placeholder="apapun yang mau kamu ucapin"></textarea>
+          <textarea type="text" name="komentar" placeholder="Jawaban Kamu"></textarea>
         </div>
-        <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+        <button type="submit" value="Submit" class="btn btn-primary">Kirim</button>
       </form>
     </div>
-
-    <script>
-      // Tetapkan tanggal kita menghitung mundur
-      var countDownDate = new Date("June 11, 2022 19:30:00").getTime();
-
-      // Perbarui hitungan mundur setiap 1 detik
-      var x = setInterval(function () {
-        // Dapatkan tanggal dan waktu hari ini
-        var now = new Date().getTime();
-
-        // Temukan jarak antara sekarang dan tanggal hitung mundur
-        var distance = countDownDate - now;
-
-        // Perhitungan waktu untuk hari, jam, menit dan detik
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Keluarkan hasil dalam elemen dengan id = "demo"
-        document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-        //Jika hitungan mundur selesai, tulis beberapa teks
-        if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("demo").innerHTML = "EXPIRED";
-        }
-      }, 1000);
-    </script>
   </body>
 </html>
